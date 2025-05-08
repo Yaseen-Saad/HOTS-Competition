@@ -1,0 +1,224 @@
+<%- include('partials/header', {title: 'Register Your Team | HOTS: Siege of Shadows', path: '/register'}) %>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">Team Registration</h1>
+      <div class="breadcrumbs">
+        <a href="/">Home</a> / <span>Register</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Instructions -->
+  <section class="registration-instructions fade-in">
+    <div class="container">
+      <h2>نظام المسابقة</h2>
+      <ul>
+        <li>تقام المسابقة في يوم واحد فقط: 13 يوليو 2025</li>
+        <li>الامتحان يشمل أربع مواد: أحياء، كيمياء، رياضيات، إنجليزي</li>
+        <li>إعلان النتائج وتوزيع الجوائز في نفس اليوم</li>
+        <li>المسابقة متاحة لطلاب الصف الثالث الإعدادي (Grade 9) والصفين الأول والثاني الثانوي (Grades 10, 11)</li>
+      </ul>
+      <h2>Competition System</h2>
+      <ul>
+        <li>The competition is held on a single day: July 13, 2025</li>
+        <li>The exam covers four subjects: Biology, Chemistry, Math, and English</li>
+        <li>Results and awards are announced on the same day</li>
+        <li>Open to students in Grade 9 (3rd preparatory), Grade 10, and Grade 11</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section class="registration">
+    <div class="container">
+      <div class="registration-intro fade-in">
+        <h2>Join the Competition</h2>
+        <p>Register your team for HOTS: Siege of Shadows and embark on a scientific journey that will challenge your intellect and creativity. Teams must have between 2-4 members from the same school.</p>
+        <div class="registration-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Complete the Form</h3>
+              <p>Fill in your team details and member information</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Receive Confirmation</h3>
+              <p>Get a confirmation email with important details</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Join Communication Channel</h3>
+              <p>Access competition updates and resources</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <form id="registration-form" action="/register" method="POST" class="glass-card fade-in">
+        <div class="form-header">
+          <img src="/images/LOGO.png" alt="HOTS Logo">
+          <h3>Register Your Team</h3>
+        </div>
+        
+        <div class="form-group slide-in-left">
+          <label for="team-name">Team Name *</label>
+          <input type="text" id="team-name" name="team-name" class="form-control" required>
+        </div>
+        
+        <div class="form-group slide-in-right">
+          <label for="city">City *</label>
+          <input type="text" id="city" name="city" class="form-control" required>
+        </div>
+        
+        <div class="form-group slide-in-left">
+          <label>Exam Language *</label>
+          <div class="radio-group" id="language-group">
+            <div class="radio-option">
+              <input type="radio" id="arabic" name="language" value="arabic" required>
+              <label for="arabic">Arabic</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="english" name="language" value="english">
+              <label for="english">English</label>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="slide-in-right">Team Members (Min: 2, Max: 4)</h3>
+        
+        <div class="team-members">
+          <!-- Team Leader (First Member) -->
+          <div class="member scale-in">
+            <div class="member-header">
+              <h3 class="member-title">Team Leader</h3>
+            </div>
+            
+            <div class="form-group">
+              <label for="member1-name">Full Name *</label>
+              <input type="text" id="member1-name" name="member1-name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="member1-email">Email *</label>
+              <input type="email" id="member1-email" name="member1-email" class="form-control" required>
+              <div class="leader-note">Make sure this email is active. It will be used to invite other members to the communication channel.</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="member1-school">School *</label>
+              <input type="text" id="member1-school" name="member1-school" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="leader-phone">Phone Number *</label>
+              <input type="tel" id="leader-phone" name="leader-phone" class="form-control" required>
+            </div>
+          </div>
+        </div>
+        
+        <button type="button" id="add-member" class="add-member-btn fade-in">
+          <i class="fas fa-plus"></i> Add Team Member
+        </button>
+        
+        <div id="member-error" class="form-error" style="display:none;color:#e53e3e;margin-top:8px;">You must add at least one more team member (minimum 2 members).</div>
+        
+        <div class="terms-checkbox-container fade-in">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and <a href="#" class="privacy-link">Privacy Policy</a> of the HOTS Competition</label>
+        </div>
+        
+        <button type="submit" class="submit-btn scale-in">Submit Registration</button>
+      </form>
+      
+      <div class="faq-container fade-in">
+        <h3>Registration FAQs</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Is there a registration fee?</h4>
+            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>No, registration for HOTS: Siege of Shadows is completely free of charge.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Can students from different schools form a team?</h4>
+            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>No, all team members must be from the same school to be eligible for participation.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>What is the age requirement for participants?</h4>
+            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>The competition is open to high school students, typically between 12-18 years of age.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Can I modify my team after registration?</h4>
+            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, team modifications are allowed until one week before the preliminary round begins. Contact the organizers through the provided communication channel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+
+<script>
+  // Ensure at least 2 members are present before submitting
+  document.getElementById('registration-form').addEventListener('submit', function (e) {
+    const members = document.querySelectorAll('.team-members .member').length
+    if (members < 2) {
+      document.getElementById('member-error').style.display = 'block'
+      e.preventDefault()
+    } else {
+      document.getElementById('member-error').style.display = 'none'
+    }
+  })
+  // Add member logic (only name, email, school fields, no phone for non-leader)
+  document.getElementById('add-member').addEventListener('click', function () {
+    const members = document.querySelectorAll('.team-members .member').length
+    if (members >= 4) return
+    const memberDiv = document.createElement('div')
+    memberDiv.className = 'member scale-in'
+    memberDiv.innerHTML = `
+      <div class="member-header">
+        <h3 class="member-title">Team Member ${members + 1}</h3>
+      </div>
+      <div class="form-group">
+        <label for="member${members + 1}-name">Full Name *</label>
+        <input type="text" id="member${members + 1}-name" name="member${members + 1}-name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="member${members + 1}-email">Email *</label>
+        <input type="email" id="member${members + 1}-email" name="member${members + 1}-email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="member${members + 1}-school">School *</label>
+        <input type="text" id="member${members + 1}-school" name="member${members + 1}-school" class="form-control" required>
+      </div>
+    `
+    document.querySelector('.team-members').appendChild(memberDiv)
+  })
+</script> 

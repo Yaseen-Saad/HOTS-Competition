@@ -1,0 +1,85 @@
+  </main>
+  
+  <!-- Footer -->
+  <footer id="contact" class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h3 class="footer-title">HOTS: Siege of Shadows</h3>
+            <p class="footer-text">An academic competition challenging Egypt's brightest high school students through scientific exploration and critical thinking.</p>
+          </div>
+          
+          <div class="footer-col">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li class="stagger-item"><a href="/" tabindex="0">Home</a></li>
+              <li class="stagger-item"><a href="/about" tabindex="0">About</a></li>
+              <li class="stagger-item"><a href="/instructions" tabindex="0">Registration</a></li>
+              <li class="stagger-item"><a href="/past-competitions" tabindex="0">Past Competitions</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-col">
+            <h3 class="footer-title">Contact Us</h3>
+            <div class="contact-info" data-stagger="true">
+              <div class="contact-item stagger-item flex items-center gap-3">
+                <span class="rounded-full bg-blue-500 p-3 text-white flex items-center justify-center shadow">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <a href="mailto:hots.eg@gmail.com" tabindex="0">hots.eg@gmail.com</a>
+              </div>
+              <div class="contact-item stagger-item flex items-center gap-3">
+                <span class="rounded-full bg-blue-500 p-3 text-white flex items-center justify-center shadow">
+                  <i class="fas fa-phone"></i>
+                </span>
+                <a href="tel:+201000000000" tabindex="0">+20 100 000 0000</a>
+              </div>
+              <div class="contact-item stagger-item flex items-center gap-3">
+                <span class="rounded-full bg-blue-500 p-3 text-white flex items-center justify-center shadow">
+                  <i class="fas fa-map-marker-alt"></i>
+                </span>
+                <span>Cairo, Egypt</span>
+              </div>
+            </div>
+            
+            <h3 class="footer-title" style="margin-top: 1.5rem;">Follow Us</h3>
+            <div class="social-links" data-stagger="true">
+              <a href="https://www.facebook.com/example" class="social-link stagger-item" aria-label="Facebook" tabindex="0">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/example" class="social-link stagger-item" aria-label="Instagram" tabindex="0">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://twitter.com/example" class="social-link stagger-item" aria-label="Twitter" tabindex="0">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/example" class="social-link stagger-item" aria-label="LinkedIn" tabindex="0">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://wa.me/123456789" class="social-link stagger-item" aria-label="WhatsApp" tabindex="0">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p class="copyright">© <%= currentYear %> HOTS: Siege of Shadows. All Rights Reserved.</p>
+          <p class="developer-signature">Designed & Developed with <i class="fas fa-heart pulse-icon"></i> by <a href="https://github.com/Yaseen-Saad" target="_blank" rel="noopener noreferrer">Yaseen Saad-Eldin</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="/js/main.js"></script>
+  <% if (currentPath === '/register') { %>
+  <script src="/js/form-validation.js"></script>
+  <% } %>
+</body>
+</html> 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="High Order Thinking Skills (HOTS) - An academic competition for Egyptian high school students">
+  <meta name="keywords" content="HOTS, High Order Thinking Skills, academic competition, Egypt, high school, science, education">
+  <title><%= typeof title !== 'undefined' ? title : 'High Order Thinking Skills (HOTS)' %></title>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+  
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar-container">
+      <a href="/" class="logo-link" aria-label="HOTS Homepage">
+        <img src="/images/LOGO.png" alt="High Order Thinking Skills (HOTS) Logo" class="logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>" tabindex="0" aria-label="Home">Home</a></li>
+        <li><a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>" tabindex="0" aria-label="About">About</a></li>
+        <li><a href="/past-competitions" class="<%= currentPath === '/past-competitions' ? 'active' : '' %>" tabindex="0" aria-label="Past Competitions">Past Competitions</a></li>
+        <li><a href="/instructions" class="nav-register-btn px-8 py-3 rounded-full flex items-center gap-2 font-semibold text-white bg-blue-600 hover:bg-blue-700 transition" tabindex="0" aria-label="Registration Instructions"><i class="fas fa-user-plus"></i> Register</a></li>
+      </ul>
+      <button class="hamburger" aria-expanded="false" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+</body>
+</html> 

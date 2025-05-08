@@ -1,0 +1,21 @@
+<%- include('partials/header', {title: title, path: path}) %>
+
+<!-- Error Page -->
+<section class="error-page">
+  <div class="container">
+    <div class="error-content glass-card fade-in">
+      <div class="error-code"><%= errorCode %></div>
+      <h1 class="error-title">
+        <%= errorCode === 404 ? 'Page Not Found' : 'Server Error' %>
+      </h1>
+      <p class="error-message"><%= errorMessage %></p>
+      <div class="glitch-effect"></div>
+      
+      <div class="error-actions">
+        <a href="/" class="cta-button scale-in">Return to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %> 
