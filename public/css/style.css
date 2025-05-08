@@ -294,6 +294,10 @@ a:hover, a:focus {
   outline: none;
 }
 
+#register-form{
+  display: flex;
+  justify-content: center;
+}
 /* Enhanced nav links */
 .nav-links a {
   color: var(--text-color);
