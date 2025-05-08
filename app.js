@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 // Routes
 app.get('/', (req, res) => {
   res.render('index', { 
-    title: 'HOTS: Siege of Shadows | Higher Order Thinkers',
+    title: 'HOTS: Siege of Shadows | Higher Order Thinking Skills',
     path: '/'
   });
 });
