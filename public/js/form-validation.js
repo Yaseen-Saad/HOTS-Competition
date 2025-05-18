@@ -124,7 +124,6 @@ function validateForm() {
     {}, // 0: leader (static)
     {
       fullName: 'entry.548296573',
-      nid: 'entry.1023785834',
       birth: 'entry.1294282125',
       email: 'entry.133235455',
       phone: 'entry.922537539',
@@ -132,7 +131,6 @@ function validateForm() {
     },
     {
       fullName: 'entry.881654068',
-      nid: 'entry.1118838775',
       birth: 'entry.1756562892',
       email: 'entry.1537377811',
       phone: 'entry.1551648067',
@@ -140,7 +138,6 @@ function validateForm() {
     },
     {
       fullName: 'entry.145835033',
-      nid: 'entry.1972682279',
       birth: 'entry.451935217',
       email: 'entry.1609625280',
       phone: 'entry.1270264514',
@@ -151,6 +148,12 @@ function validateForm() {
   // Validate each team member
   const members = document.querySelectorAll('.member');
   console.log('Validating team members:', members.length);
+  if (members.length < 2) {
+    // Show error on first member section or the container
+    const memberSection = members[0] || document.getElementById('members-section') || document.body;
+    showError(memberSection, 'At least 2 team members are required.');
+    isValid = false;
+  }
   members.forEach((member, index) => {
     // Skip if member element is not actually in the DOM
     if (!member.isConnected) return;
@@ -158,7 +161,6 @@ function validateForm() {
     if (index === 0) {
       // Team Leader fields (static)
       const nameField = member.querySelector('input[name="entry.257795392"]');
-      const nidField = member.querySelector('input[name="entry.1993075667"]');
       const birthField = member.querySelector('input[name="entry.1483741524"]');
       const emailField = member.querySelector('input[name="entry.1981092624"]');
       const phoneField = member.querySelector('input[name="entry.632435498"]');
@@ -166,7 +168,6 @@ function validateForm() {
       
       console.log(`Validating leader:`, {
         name: nameField?.value,
-        nid: nidField?.value,
         birth: birthField?.value,
         email: emailField?.value,
         phone: phoneField?.value,
@@ -175,10 +176,6 @@ function validateForm() {
       
       if (!nameField?.value.trim()) {
         showError(nameField, 'Name is required');
-        isValid = false;
-      }
-      if (!nidField?.value.trim()) {
-        showError(nidField, 'National ID is required');
         isValid = false;
       }
       if (!birthField?.value.trim()) {
@@ -209,20 +206,18 @@ function validateForm() {
       
       // Only validate if all required fields exist
       const nameField = member.querySelector(`input[name="${map.fullName}"]`);
-      const nidField = member.querySelector(`input[name="${map.nid}"]`);
       const birthField = member.querySelector(`input[name="${map.birth}"]`);
       const emailField = member.querySelector(`input[name="${map.email}"]`);
       const phoneField = member.querySelector(`input[name="${map.phone}"]`);
       const schoolField = member.querySelector(`input[name="${map.school}"]`);
       
       // Skip validation if any field is missing (member was removed)
-      if (!nameField || !nidField || !birthField || !emailField || !phoneField || !schoolField) {
+      if (!nameField || !birthField || !emailField || !phoneField || !schoolField) {
         return;
       }
       
       console.log(`Validating member ${actualIndex + 1}:`, {
         name: nameField?.value,
-        nid: nidField?.value,
         birth: birthField?.value,
         email: emailField?.value,
         phone: phoneField?.value,
@@ -231,10 +226,6 @@ function validateForm() {
       
       if (!nameField?.value.trim()) {
         showError(nameField, 'Name is required');
-        isValid = false;
-      }
-      if (!nidField?.value.trim()) {
-        showError(nidField, 'National ID is required');
         isValid = false;
       }
       if (!birthField?.value.trim()) {
@@ -404,7 +395,7 @@ function showCustomAlert(title, message) {
   if (existingAlert) {
     existingAlert.remove();
   }
-  
+
   // Create alert container
   const alertDiv = document.createElement('div');
   alertDiv.className = 'custom-alert glass-card';
@@ -422,7 +413,7 @@ function showCustomAlert(title, message) {
     max-width: 90%;
     width: 400px;
   `;
-  
+
   // Add content
   alertDiv.innerHTML = `
     <h3 style="margin-bottom: 1rem; color: var(--primary-color);">${title}</h3>
@@ -431,4 +422,4 @@ function showCustomAlert(title, message) {
   `;
   // Add to body
   document.body.appendChild(alertDiv);
-} 
+}
