@@ -1929,4 +1929,23 @@ a:hover, a:focus {
 html {
   scrollbar-width: thin;
   scrollbar-color: #2563eb #0f172a;
-} 
+}
+
+/* Responsive font sizes for tiny screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 2.2rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  input, button, select, textarea {
+    font-size: 1rem !important;
+  }
+}
